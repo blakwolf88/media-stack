@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.9.1"
 name: media-stack
 services:
   vpn:
@@ -23,7 +23,7 @@ services:
       # - FREE_ONLY=on  # Valid with protonvpn only. on if using free service provided by protonvpn
 
       ## Enable below if VPN_SERVICE_PROVIDER=custom
-      # - VPN_TYPE=openvpn # or wiregiuard. 
+      # - VPN_TYPE=openvpn # openvpn or wireguard. 
 
       ## If VPN_TYPE is openvpn
       # - OPENVPN_CUSTOM_CONFIG=/gluetun/custom.conf
@@ -62,7 +62,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
       - USER=admin
       - PASS=nimdatx
 
@@ -92,7 +92,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
       - WEBUI_PORT=5080
     volumes:
       - qbittorrent-config:/config
@@ -113,7 +113,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     ports:
       - 7878:7878
     volumes:
@@ -130,7 +130,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - sonarr-config:/config
       - torrent-downloads:/downloads
@@ -147,7 +147,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - jackett-config:/config
       - jackett-blackhole:/downloads
@@ -168,7 +168,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - prowlarr-config:/config
     ports:
@@ -184,7 +184,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - jellyfin-config:/config
       - torrent-downloads:/data
